@@ -1,0 +1,26 @@
+:root {
+    --Aqua: aqua;
+    --AquaE: rgb(0, 204, 204);
+}
+
+body{
+    align-items: center;
+    text-align: center;
+}
+
+button{
+    margin-top: 5%;
+    background-color: var(--Aqua);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--AquaE);
+}
+
+.showcase {
+    width: 110%;
+}
