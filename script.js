@@ -1,19 +1,29 @@
-let generate_btn = document.querySelector(".generate_btn")
+const url = "https://api.thecatapi.com/v1/images/search";
+const section = document.querySelector(".container");
+const button = document.querySelector(".btn");
 
-generate_btn.addEventListener("click", fetchPics)
+button.addEventListener("click", getRandomCats);
 
-function fetchPics() {
-    fetch('https://api.thecatapi.com/v1/images/search')
-    .then(response => response.json())
-    .then((data)=> {
-        let catsImgUrl = data[0].url
+randomCatPhoto = (json) => {
+  let photo = json[0].url;
+  section.classList.add("cats");
 
-        let catsImgEl = document.createElement("img")
-        catsImgEl.setAttribute('src', `${catsImgUrl}`)
-        catsImgEl.classList.add("showcase")
+  let image = document.createElement("img");
+  image.src = photo;
+  image.classList.add("random_cats");
+  image.alt = photo;
+  section.appendChild(image);
+};
 
-        let catsImgDiv = document.querySelector(".catsImgDiv")
-        catsImgDiv.appendChild(catsImgEl)
-    })
-    .catch(err => console.log(err))
+async function getRandomCats() {
+  section.innerHTML = "";
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    console.log("JSON:", json);
+    return randomCatPhoto(json);
+  } catch (e) {
+    console.log("This is an error");
+    console.log(e);
+  }
 }

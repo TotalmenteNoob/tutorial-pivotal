@@ -1,26 +1,40 @@
-:root {
-    --Aqua: aqua;
-    --AquaE: rgb(0, 204, 204);
+body {
+  background: rgb(17, 17, 17);
 }
 
-body{
-    align-items: center;
-    text-align: center;
+.header-content {
+  text-align: center;
 }
 
-button{
-    margin-top: 5%;
-    background-color: var(--Aqua);
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
+.btn {
+  background: transparent;
+  border: none;
+  background-color: rgb(216, 34, 74);
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 2em;
 }
 
-button:hover {
-    background-color: var(--AquaE);
+.btn:hover {
+  background-color: brown;
 }
 
-.showcase {
-    width: 110%;
+/* JavaScript */
+.cats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.random_cats {
+  width: 40%;
+  border-radius: 20px;
+}
+
+img {
+  max-width: 700px;
+  height: 30rem;
 }
